@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EcoCare | Compliance & Violations</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f1f8f4;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 22px 40px;
+}
+
+.header h1 {
+    font-size: 26px;
+}
+
+.header span {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* MAIN */
+.container {
+    padding: 30px 40px;
+}
+
+/* SUMMARY CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.card .value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+/* SECTION */
+.section {
+    margin-top: 35px;
+}
+
+.section h2 {
+    margin-bottom: 18px;
+    color: #2e7d32;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+th {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+/* STATUS TAGS */
+.status {
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.open {
+    background: #fdecea;
+    color: #c62828;
+}
+
+.resolved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.warning {
+    background: #fff7ed;
+    color: #e65100;
+}
+
+/* INFO BOX */
+.info-box {
+    margin-top: 35px;
+    background: #f9fdf9;
+    padding: 22px;
+    border-radius: 14px;
+    border-left: 6px solid #66bb6a;
+}
+
+.info-box h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Compliance & Violations</h1>
+    <span>Regulatory safety, inspection readiness & penalty prevention</span>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- SUMMARY -->
+    <div class="cards">
+        <div class="card">
+            <h3>Compliance Score</h3>
+            <div class="value">92%</div>
+        </div>
+
+        <div class="card">
+            <h3>Open Violations</h3>
+            <div class="value">1</div>
+        </div>
+
+        <div class="card">
+            <h3>Resolved Violations</h3>
+            <div class="value">7</div>
+        </div>
+
+        <div class="card">
+            <h3>Last Inspection</h3>
+            <div class="value">05‑01‑2026</div>
+        </div>
+    </div>
+
+    <!-- OPEN VIOLATIONS -->
+    <div class="section">
+        <h2>Open Violations</h2>
+
+        <table>
+            <tr>
+                <th>Violation</th>
+                <th>Category</th>
+                <th>Reported Date</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Improper segregation of infectious waste</td>
+                <td>Yellow</td>
+                <td>12‑01‑2026</td>
+                <td><span class="status open">Open</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- PAST VIOLATIONS -->
+    <div class="section">
+        <h2>Past Violations</h2>
+
+        <table>
+            <tr>
+                <th>Violation</th>
+                <th>Category</th>
+                <th>Resolved Date</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Delayed waste pickup</td>
+                <td>Red</td>
+                <td>28‑12‑2025</td>
+                <td><span class="status resolved">Resolved</span></td>
+            </tr>
+
+            <tr>
+                <td>Missing disposal log entry</td>
+                <td>Blue</td>
+                <td>15‑12‑2025</td>
+                <td><span class="status resolved">Resolved</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- INSPECTION HISTORY -->
+    <div class="section">
+        <h2>Inspection History</h2>
+
+        <table>
+            <tr>
+                <th>Inspection Date</th>
+                <th>Authority</th>
+                <th>Remarks</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>05‑01‑2026</td>
+                <td>State Pollution Control Board</td>
+                <td>Minor warning issued</td>
+                <td><span class="status warning">Warning</span></td>
+            </tr>
+
+            <tr>
+                <td>12‑10‑2025</td>
+                <td>District Health Authority</td>
+                <td>Fully compliant</td>
+                <td><span class="status resolved">Compliant</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- COMPLIANCE NOTE -->
+    <div class="info-box">
+        <h3>🛡️ Compliance Protection Note</h3>
+        <p>
+            This page maintains a complete regulatory trail of inspections,
+            violations, and resolutions, helping hospitals proactively
+            address risks and avoid financial penalties.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Transparent Compliance • Reduced Penalties • Safer Healthcare
+    </div>
+
+</div>
+
+</body>
+</html>

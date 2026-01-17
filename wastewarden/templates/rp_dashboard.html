@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Regulator Portal | Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f3faf6;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#2e7d32,#a5d6a7);
+    color:white;
+    padding:24px 40px;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD THEMES */
+.city::before{ background:#66bb6a; }
+.leaderboard::before{ background:#42a5f5; }
+.violations::before{ background:#ef5350; }
+.missed::before{ background:#ffa726; }
+.alerts::before{ background:#ab47bc; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.city .icon{ background:#66bb6a; }
+.leaderboard .icon{ background:#42a5f5; }
+.violations .icon{ background:#ef5350; }
+.missed .icon{ background:#ffa726; }
+.alerts .icon{ background:#ab47bc; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* SECOND ROW */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+td{
+    font-size:14px;
+    border-bottom:1px solid #eee;
+}
+
+/* TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.good{ background:#e8f5e9; color:#2e7d32; }
+.warn{ background:#fff3cd; color:#b26a00; }
+.bad{ background:#fdecea; color:#c62828; }
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Regulator Dashboard</h1>
+    <p>City‑wide biomedical waste monitoring & compliance overview</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card city">
+            <div class="icon">🏙</div>
+            <h3>City‑wide Waste Data</h3>
+            <p>12.4 T</p>
+            <span>Total waste generated today</span>
+        </div>
+
+        <div class="card leaderboard">
+            <div class="icon">🏆</div>
+            <h3>Compliance Leaderboard</h3>
+            <p>92%</p>
+            <span>Top hospital compliance score</span>
+        </div>
+
+        <div class="card violations">
+            <div class="icon">⛔</div>
+            <h3>Violations Summary</h3>
+            <p>8</p>
+            <span>Active violations city‑wide</span>
+        </div>
+
+        <div class="card missed">
+            <div class="icon">🚫</div>
+            <h3>Missed Pickups</h3>
+            <p>5</p>
+            <span>Delayed beyond SLA</span>
+        </div>
+
+        <div class="card alerts">
+            <div class="icon">🔔</div>
+            <h3>Alerts</h3>
+            <p style="color:#7b1fa2;">3</p>
+            <span>Critical issues requiring action</span>
+        </div>
+
+    </div>
+
+    <!-- COMPLIANCE TABLE -->
+    <div class="section">
+        <h2>Hospital Compliance Snapshot</h2>
+
+        <table>
+            <tr>
+                <th>Hospital</th>
+                <th>City</th>
+                <th>Compliance Score</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>City General Hospital</td>
+                <td>Bhubaneswar</td>
+                <td>94%</td>
+                <td><span class="tag good">Compliant</span></td>
+            </tr>
+
+            <tr>
+                <td>GreenLife Medical Center</td>
+                <td>Cuttack</td>
+                <td>86%</td>
+                <td><span class="tag warn">Warning</span></td>
+            </tr>
+
+            <tr>
+                <td>Sunrise Diagnostics</td>
+                <td>Puri</td>
+                <td>72%</td>
+                <td><span class="tag bad">Violation</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Regulatory Oversight • Public Safety • Environmental Protection
+</div>
+
+</body>
+</html>

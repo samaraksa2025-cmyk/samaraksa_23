@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disposal Management | Treatment Facility</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #f4fbf7, #ffffff);
+    color: #2c3e50;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(to right, #2ecc71, #a8e6cf);
+    padding: 20px 40px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 26px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* MAIN CONTAINER */
+.container {
+    padding: 30px 40px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #1e8449;
+}
+
+/* FORM CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* FORM GRID */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input[type="file"] {
+    padding: 6px;
+}
+
+/* FULL WIDTH */
+.full {
+    grid-column: 1 / -1;
+}
+
+/* BUTTON */
+button {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* STATUS INFO */
+.status-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.status {
+    background: #f6fffa;
+    border-left: 6px solid #2ecc71;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.status h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #145a32;
+}
+
+.status p {
+    font-size: 14px;
+}
+
+/* FOOTER NOTE */
+.note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Disposal Management</h1>
+    <p>Treatment Facility Portal • Biomedical Waste Safe Disposal</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- CREATE DISPOSAL RECORD -->
+    <h2 class="section-title">Create Disposal Record</h2>
+
+    <div class="card">
+        <form>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Hospital Name</label>
+                    <input type="text" placeholder="Enter hospital name">
+                </div>
+
+                <div>
+                    <label>Waste Category</label>
+                    <select>
+                        <option>Yellow – Infectious</option>
+                        <option>Red – Contaminated</option>
+                        <option>Blue – Glass</option>
+                        <option>White – Sharps</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Waste Quantity (kg)</label>
+                    <input type="number" placeholder="Enter quantity">
+                </div>
+
+                <div>
+                    <label>Treatment Method</label>
+                    <select>
+                        <option>Incineration</option>
+                        <option>Autoclaving</option>
+                        <option>Shredding</option>
+                        <option>Deep Burial</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Disposal Date</label>
+                    <input type="date">
+                </div>
+
+                <div>
+                    <label>Disposal Time</label>
+                    <input type="time">
+                </div>
+
+                <div class="full">
+                    <label>Upload Disposal Certificate</label>
+                    <input type="file">
+                </div>
+
+                <div class="full">
+                    <button type="submit">Submit Disposal Record</button>
+                </div>
+
+            </div>
+
+        </form>
+
+        <p class="note">
+            * Disposal records act as legal proof during audits & inspections.
+        </p>
+    </div>
+
+    <!-- DISPOSAL STATUS SUMMARY -->
+    <h2 class="section-title">Disposal Status Overview</h2>
+
+    <div class="status-box">
+
+        <div class="status">
+            <h3>Completed Disposal</h3>
+            <p>Waste successfully treated & logged</p>
+        </div>
+
+        <div class="status">
+            <h3>Pending Verification</h3>
+            <p>Awaiting regulatory approval</p>
+        </div>
+
+        <div class="status">
+            <h3>Compliance Status</h3>
+            <p>✔ Meets biomedical waste norms</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

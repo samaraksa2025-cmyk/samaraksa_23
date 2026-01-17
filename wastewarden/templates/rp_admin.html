@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard | Biomedical Waste Platform</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f4fbf7;
+    color:#2c3e50;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.users::before{ background:#2ecc71; }
+.roles::before{ background:#42a5f5; }
+.access::before{ background:#ffa726; }
+.logs::before{ background:#9c27b0; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.users .icon{ background:#2ecc71; }
+.roles .icon{ background:#42a5f5; }
+.access .icon{ background:#ffa726; }
+.logs .icon{ background:#9c27b0; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+td{
+    border-bottom:1px solid #eee;
+}
+
+/* TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.active{ background:#e8f5e9; color:#2e7d32; }
+.inactive{ background:#fdecea; color:#c62828; }
+.allowed{ background:#e3f2fd; color:#1565c0; }
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Admin Dashboard</h1>
+    <p>User control, access governance & system audit logs</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card users">
+            <div class="icon">👥</div>
+            <h3>User Management</h3>
+            <p>126</p>
+            <span>Total active users</span>
+        </div>
+
+        <div class="card roles">
+            <div class="icon">🧩</div>
+            <h3>Role Management</h3>
+            <p>7</p>
+            <span>Defined system roles</span>
+        </div>
+
+        <div class="card access">
+            <div class="icon">🔐</div>
+            <h3>Access Control</h3>
+            <p>98%</p>
+            <span>Policy enforcement rate</span>
+        </div>
+
+        <div class="card logs">
+            <div class="icon">📜</div>
+            <h3>System Logs</h3>
+            <p>2,418</p>
+            <span>Recorded activities</span>
+        </div>
+
+    </div>
+
+    <!-- USER MANAGEMENT -->
+    <div class="section">
+        <h2>User Management</h2>
+
+        <table>
+            <tr>
+                <th>User Name</th>
+                <th>Role</th>
+                <th>Organization</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Rahul Mehta</td>
+                <td>Hospital Admin</td>
+                <td>City General Hospital</td>
+                <td><span class="tag active">Active</span></td>
+            </tr>
+
+            <tr>
+                <td>Anita Sharma</td>
+                <td>Facility Operator</td>
+                <td>GreenSafe CBWTF</td>
+                <td><span class="tag active">Active</span></td>
+            </tr>
+
+            <tr>
+                <td>Vikas Rao</td>
+                <td>Inspector</td>
+                <td>SPCB</td>
+                <td><span class="tag inactive">Inactive</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ROLE & ACCESS -->
+    <div class="section">
+        <h2>Role & Access Control</h2>
+
+        <table>
+            <tr>
+                <th>Role</th>
+                <th>Key Permissions</th>
+                <th>Access Level</th>
+            </tr>
+
+            <tr>
+                <td>Hospital Admin</td>
+                <td>Waste logs, pickup requests</td>
+                <td><span class="tag allowed">Granted</span></td>
+            </tr>
+
+            <tr>
+                <td>Facility Operator</td>
+                <td>Disposal records, certificates</td>
+                <td><span class="tag allowed">Granted</span></td>
+            </tr>
+
+            <tr>
+                <td>Regulator</td>
+                <td>Audits, violations, rankings</td>
+                <td><span class="tag allowed">Granted</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SYSTEM LOGS -->
+    <div class="section">
+        <h2>System Logs</h2>
+
+        <table>
+            <tr>
+                <th>Timestamp</th>
+                <th>User</th>
+                <th>Action</th>
+                <th>Module</th>
+            </tr>
+
+            <tr>
+                <td>17‑Jan‑2026 10:42 AM</td>
+                <td>Admin</td>
+                <td>User role updated</td>
+                <td>Role Management</td>
+            </tr>
+
+            <tr>
+                <td>17‑Jan‑2026 09:15 AM</td>
+                <td>Inspector A</td>
+                <td>Inspection report uploaded</td>
+                <td>Inspection Management</td>
+            </tr>
+
+            <tr>
+                <td>16‑Jan‑2026 06:40 PM</td>
+                <td>Hospital Admin</td>
+                <td>Pickup request submitted</td>
+                <td>Pickup Monitoring</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    System Governance • Security • Audit Trail
+</div>
+
+</body>
+</html>

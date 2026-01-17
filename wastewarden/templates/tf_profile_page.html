@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facility Profile | Biomedical Waste Platform</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #f4fbf7;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(90deg, #2f9e74, #5cc39a);
+            color: white;
+            padding: 18px 40px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* CONTAINER */
+        .container {
+            padding: 30px 40px;
+        }
+
+        /* SECTION */
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #2f9e74;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* PROFILE GRID */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .profile-grid label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .profile-grid input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        /* USERS TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        table th {
+            background: #eaf7f1;
+            color: #2f9e74;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-green {
+            background: #2f9e74;
+            color: white;
+        }
+
+        .btn-red {
+            background: #d96b6b;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* PASSWORD FORM */
+        .password-form {
+            max-width: 400px;
+        }
+
+        .password-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        /* LOGOUT */
+        .logout-box {
+            text-align: center;
+        }
+
+        .logout-box p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        Treatment Facility – Profile & Users
+    </div>
+
+    <div class="container">
+
+        <!-- FACILITY PROFILE -->
+        <div class="section">
+            <h2>Facility Profile</h2>
+
+            <div class="profile-grid">
+                <div>
+                    <label>Facility Name</label>
+                    <input type="text" value="GreenSafe Biomedical Treatment Pvt Ltd" disabled>
+                </div>
+                <div>
+                    <label>Registration ID</label>
+                    <input type="text" value="CBWTF-IND-2045" disabled>
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" value="Bhubaneswar" disabled>
+                </div>
+                <div>
+                    <label>State</label>
+                    <input type="text" value="Odisha" disabled>
+                </div>
+                <div>
+                    <label>Contact Email</label>
+                    <input type="email" value="contact@greensafe.com">
+                </div>
+                <div>
+                    <label>Contact Number</label>
+                    <input type="text" value="+91 98765 43210">
+                </div>
+            </div>
+        </div>
+
+        <!-- OPERATOR USERS -->
+        <div class="section">
+            <h2>Operator Users</h2>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Rohit Kumar</td>
+                    <td>Facility Manager</td>
+                    <td>rohit@greensafe.com</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>Anita Sharma</td>
+                    <td>Disposal Operator</td>
+                    <td>anita@greensafe.com</td>
+                    <td>Active</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CHANGE PASSWORD -->
+        <div class="section">
+            <h2>Change Password</h2>
+
+            <div class="password-form">
+                <input type="password" placeholder="Current Password">
+                <input type="password" placeholder="New Password">
+                <input type="password" placeholder="Confirm New Password">
+                <button class="btn btn-green">Update Password</button>
+            </div>
+        </div>
+
+        <!-- LOGOUT -->
+        <div class="section logout-box">
+            <h2>Logout</h2>
+            <p>You are currently logged in as a Treatment Facility user.</p>
+            <button class="btn btn-red">Logout Securely</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

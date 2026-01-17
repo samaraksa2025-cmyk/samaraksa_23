@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Collection Agency Portal | WasteWarden</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
+        min-height: 100vh;
+        padding: 30px;
+    }
+
+    /* Top Bar */
+    .topbar {
+        background: linear-gradient(135deg, #43a047, #66bb6a);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .topbar h1 {
+        font-size: 26px;
+    }
+
+    .topbar span {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    .logout-btn {
+        background: white;
+        color: #2e7d32;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    /* Cards */
+    .dashboard-container {
+        margin-top: 30px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        position: relative;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #66bb6a, #43a047);
+        border-radius: 18px 18px 0 0;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        color: #2e7d32;
+        margin-bottom: 10px;
+    }
+
+    .card-value {
+        font-size: 34px;
+        font-weight: 700;
+        color: #1b5e20;
+        margin-bottom: 5px;
+    }
+
+    .card-subtext {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* Pickup List */
+    .pickup-section {
+        margin-top: 35px;
+        background: white;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    .pickup-section h2 {
+        color: #2e7d32;
+        margin-bottom: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    th {
+        background: #f1f8e9;
+        color: #2e7d32;
+    }
+
+    .status-ok {
+        color: #2e7d32;
+        font-weight: 600;
+    }
+
+    .status-pending {
+        color: #f9a825;
+        font-weight: 600;
+    }
+
+    .status-delay {
+        color: #e53935;
+        font-weight: 600;
+    }
+
+    /* Quick Actions */
+    .actions {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .action-btn {
+        background: linear-gradient(135deg, #66bb6a, #43a047);
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 14px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .action-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- Top Header -->
+<div class="topbar">
+    <div>
+        <h1>Collection Agency Dashboard</h1>
+        <span>Biomedical Waste Pickup & Transport Portal</span>
+    </div>
+    <button class="logout-btn">Logout</button>
+</div>
+
+<!-- Dashboard Cards -->
+<div class="dashboard-container">
+
+    <div class="cards">
+
+        <!-- Today's Pickups -->
+        <div class="card">
+            <h3>Today’s Pickups</h3>
+            <div class="card-value">12</div>
+            <div class="card-subtext">Hospitals scheduled for today</div>
+        </div>
+
+        <!-- Pending Requests -->
+        <div class="card">
+            <h3>Pending Requests</h3>
+            <div class="card-value">5</div>
+            <div class="card-subtext">Awaiting pickup confirmation</div>
+        </div>
+
+        <!-- Completed Pickups -->
+        <div class="card">
+            <h3>Completed Pickups</h3>
+            <div class="card-value">7</div>
+            <div class="card-subtext">Successfully collected today</div>
+        </div>
+
+        <!-- Delayed Pickups -->
+        <div class="card">
+            <h3>Delayed Pickups</h3>
+            <div class="card-value">2</div>
+            <div class="card-subtext">Pending beyond scheduled time</div>
+        </div>
+
+    </div>
+
+    <!-- Pickup List -->
+    <div class="pickup-section">
+        <h2>Today's Pickup Schedule</h2>
+
+        <table>
+            <tr>
+                <th>Hospital</th>
+                <th>City</th>
+                <th>Scheduled Time</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>City Care Hospital</td>
+                <td>Bhubaneswar</td>
+                <td>10:30 AM</td>
+                <td class="status-ok">Completed</td>
+            </tr>
+
+            <tr>
+                <td>Sunrise Diagnostics</td>
+                <td>Cuttack</td>
+                <td>12:00 PM</td>
+                <td class="status-pending">Pending</td>
+            </tr>
+
+            <tr>
+                <td>GreenLife Clinic</td>
+                <td>Puri</td>
+                <td>2:00 PM</td>
+                <td class="status-delay">Delayed</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions">
+        <button class="action-btn">View Pickup Requests</button>
+        <button class="action-btn">Confirm Pickup</button>
+        <button class="action-btn">Pickup History</button>
+        <button class="action-btn">Download Report</button>
+    </div>
+
+</div>
+
+</body>
+</html>

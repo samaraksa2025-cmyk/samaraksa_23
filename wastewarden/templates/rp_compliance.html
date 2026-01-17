@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compliance Management Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f4fbf7;
+    color:#2c3e50;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.issue::before{ background:#e74c3c; }
+.close::before{ background:#2ecc71; }
+.penalty::before{ background:#f39c12; }
+.legal::before{ background:#5c6bc0; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.issue .icon{ background:#e74c3c; }
+.close .icon{ background:#2ecc71; }
+.penalty .icon{ background:#f39c12; }
+.legal .icon{ background:#5c6bc0; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+td{
+    border-bottom:1px solid #eee;
+}
+
+/* TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.open{ background:#fdecea; color:#c62828; }
+.closed{ background:#e8f5e9; color:#2e7d32; }
+.pending{ background:#fff3cd; color:#b26a00; }
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Compliance Management</h1>
+    <p>Violation handling, penalties & legal enforcement tracking</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card issue">
+            <div class="icon">⚠</div>
+            <h3>Issued Violations</h3>
+            <p>14</p>
+            <span>Active compliance violations</span>
+        </div>
+
+        <div class="card close">
+            <div class="icon">✔</div>
+            <h3>Closed Violations</h3>
+            <p>38</p>
+            <span>Resolved compliance cases</span>
+        </div>
+
+        <div class="card penalty">
+            <div class="icon">₹</div>
+            <h3>Penalty Records</h3>
+            <p>₹2.4L</p>
+            <span>Total penalties imposed</span>
+        </div>
+
+        <div class="card legal">
+            <div class="icon">⚖</div>
+            <h3>Legal Notices</h3>
+            <p>6</p>
+            <span>Notices issued</span>
+        </div>
+
+    </div>
+
+    <!-- VIOLATION TABLE -->
+    <div class="section">
+        <h2>Violation & Enforcement Records</h2>
+
+        <table>
+            <tr>
+                <th>Facility Name</th>
+                <th>Violation Type</th>
+                <th>Issued On</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>City General Hospital</td>
+                <td>Improper Segregation</td>
+                <td>12‑Jan‑2026</td>
+                <td><span class="tag open">Open</span></td>
+            </tr>
+
+            <tr>
+                <td>Sunrise Diagnostics</td>
+                <td>Missed Pickup</td>
+                <td>05‑Jan‑2026</td>
+                <td><span class="tag closed">Closed</span></td>
+            </tr>
+
+            <tr>
+                <td>Care Plus Clinic</td>
+                <td>Expired Authorization</td>
+                <td>28‑Dec‑2025</td>
+                <td><span class="tag pending">Pending Action</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Enforcement • Accountability • Legal Compliance
+</div>
+
+</body>
+</html>

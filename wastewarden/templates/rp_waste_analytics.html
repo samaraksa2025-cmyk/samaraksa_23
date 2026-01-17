@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Waste Analytics Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f3faf6;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.category::before{ background:#66bb6a; }
+.city::before{ background:#42a5f5; }
+.monthly::before{ background:#ffa726; }
+.export::before{ background:#2e7d32; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.category .icon{ background:#66bb6a; }
+.city .icon{ background:#42a5f5; }
+.monthly .icon{ background:#ffa726; }
+.export .icon{ background:#2e7d32; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+td{
+    font-size:14px;
+    border-bottom:1px solid #eee;
+}
+
+/* BUTTON */
+.btn{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Waste Analytics Dashboard</h1>
+    <p>Data‑driven insights for biomedical waste monitoring</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card category">
+            <div class="icon">🧬</div>
+            <h3>Category‑wise Waste</h3>
+            <p>4 Types</p>
+            <span>Yellow, Red, Blue, White</span>
+        </div>
+
+        <div class="card city">
+            <div class="icon">🏙</div>
+            <h3>City‑wise Trends</h3>
+            <p>6 Cities</p>
+            <span>Waste generation comparison</span>
+        </div>
+
+        <div class="card monthly">
+            <div class="icon">📅</div>
+            <h3>Monthly Analytics</h3>
+            <p>Jan 2026</p>
+            <span>Current reporting month</span>
+        </div>
+
+        <div class="card export">
+            <div class="icon">⬇</div>
+            <h3>Export Data</h3>
+            <p>CSV / PDF</p>
+            <span>Download reports</span>
+        </div>
+
+    </div>
+
+    <!-- CATEGORY TABLE -->
+    <div class="section">
+        <h2>Category‑wise Waste Summary</h2>
+
+        <table>
+            <tr>
+                <th>Waste Category</th>
+                <th>Total Quantity</th>
+                <th>Treatment Method</th>
+            </tr>
+
+            <tr>
+                <td>Yellow (Infectious)</td>
+                <td>3,240 kg</td>
+                <td>Incineration</td>
+            </tr>
+
+            <tr>
+                <td>Red (Plastic)</td>
+                <td>2,180 kg</td>
+                <td>Autoclaving</td>
+            </tr>
+
+            <tr>
+                <td>Blue (Glass)</td>
+                <td>960 kg</td>
+                <td>Recycling</td>
+            </tr>
+
+            <tr>
+                <td>White (Sharps)</td>
+                <td>640 kg</td>
+                <td>Encapsulation</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CITY TABLE -->
+    <div class="section">
+        <h2>City‑wise Waste Trends</h2>
+
+        <table>
+            <tr>
+                <th>City</th>
+                <th>Total Waste</th>
+                <th>Trend</th>
+            </tr>
+
+            <tr>
+                <td>Bhubaneswar</td>
+                <td>2,150 kg</td>
+                <td>Increasing</td>
+            </tr>
+
+            <tr>
+                <td>Cuttack</td>
+                <td>1,840 kg</td>
+                <td>Stable</td>
+            </tr>
+
+            <tr>
+                <td>Puri</td>
+                <td>1,120 kg</td>
+                <td>Decreasing</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- EXPORT -->
+    <div class="section">
+        <h2>Export Analytics Data</h2>
+        <button class="btn">Download Monthly Analytics</button>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Analytics • Transparency • Data‑Driven Regulation
+</div>
+
+</body>
+</html>

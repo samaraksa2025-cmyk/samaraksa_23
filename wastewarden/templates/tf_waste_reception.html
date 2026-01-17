@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Waste Reception Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f3faf6;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.received::before{ background:#66bb6a; }
+.manifest::before{ background:#42a5f5; }
+.hospital::before{ background:#ffa726; }
+
+/* ICON */
+.icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.received .icon{ background:#66bb6a; }
+.manifest .icon{ background:#42a5f5; }
+.hospital .icon{ background:#ffa726; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* TABLE SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+td{
+    font-size:14px;
+    border-bottom:1px solid #eee;
+}
+
+/* TAG */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.received-tag{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+.pending-tag{
+    background:#fff3cd;
+    color:#b26a00;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Waste Reception Dashboard</h1>
+    <p>Monitoring received biomedical waste & pickup documentation</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card received">
+            <div class="icon">📦</div>
+            <h3>Received Waste List</h3>
+            <p>38</p>
+            <span>Waste consignments received today</span>
+        </div>
+
+        <div class="card manifest">
+            <div class="icon">📄</div>
+            <h3>Pickup Manifest</h3>
+            <p>22</p>
+            <span>Manifests verified & logged</span>
+        </div>
+
+        <div class="card hospital">
+            <div class="icon">🏥</div>
+            <h3>Hospital Details</h3>
+            <p>14</p>
+            <span>Hospitals serviced today</span>
+        </div>
+
+    </div>
+
+    <!-- RECEIVED WASTE TABLE -->
+    <div class="section">
+        <h2>Recent Waste Reception</h2>
+
+        <table>
+            <tr>
+                <th>Manifest ID</th>
+                <th>Hospital</th>
+                <th>Waste Category</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>MF‑3012</td>
+                <td>City General Hospital</td>
+                <td>Yellow</td>
+                <td>120 kg</td>
+                <td><span class="tag received-tag">Received</span></td>
+            </tr>
+
+            <tr>
+                <td>MF‑3015</td>
+                <td>LifeCare Clinic</td>
+                <td>Red</td>
+                <td>75 kg</td>
+                <td><span class="tag pending-tag">Pending Check</span></td>
+            </tr>
+
+            <tr>
+                <td>MF‑3018</td>
+                <td>Sunrise Diagnostics</td>
+                <td>Blue</td>
+                <td>40 kg</td>
+                <td><span class="tag received-tag">Received</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Waste Traceability • Verified Manifests • Regulatory Transparency
+</div>
+
+</body>
+</html>

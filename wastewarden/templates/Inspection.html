@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EcoCare | Inspections & Reports</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background:#f1f8f4;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    padding:22px 40px;
+}
+
+.header h1{
+    font-size:26px;
+}
+
+/* CONTAINER */
+.container{
+    padding:30px 40px;
+}
+
+/* SECTION */
+.section{
+    margin-bottom:35px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+td{
+    font-size:14px;
+    border-bottom:1px solid #eee;
+}
+
+/* STATUS TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.completed{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#b26a00;
+}
+
+.critical{
+    background:#fdecea;
+    color:#c62828;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* REPORT CARD */
+.report-box{
+    background:#f9fefb;
+    border-left:6px solid #2e7d32;
+    padding:18px;
+    border-radius:12px;
+}
+
+.report-box h3{
+    margin-bottom:10px;
+    color:#2e7d32;
+}
+
+.report-box p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:10px;
+}
+
+.report-box button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Inspections & Reports</h1>
+</div>
+
+<div class="container">
+
+    <!-- INSPECTION HISTORY -->
+    <div class="section">
+        <h2>Inspection History</h2>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Inspection ID</th>
+                    <th>Date</th>
+                    <th>Inspector</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+                </tr>
+
+                <tr>
+                    <td>INSP‑1045</td>
+                    <td>12 Jan 2026</td>
+                    <td>Odisha PCB</td>
+                    <td><span class="tag completed">Completed</span></td>
+                    <td>All procedures compliant</td>
+                </tr>
+
+                <tr>
+                    <td>INSP‑1048</td>
+                    <td>05 Jan 2026</td>
+                    <td>Health Dept.</td>
+                    <td><span class="tag pending">Follow‑up</span></td>
+                    <td>Storage area labeling</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- INSPECTION REPORTS & RECOMMENDATIONS -->
+    <div class="section">
+        <h2>Inspection Reports & Recommendations</h2>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Inspection</th>
+                    <th>Key Findings</th>
+                    <th>Recommendation</th>
+                    <th>Severity</th>
+                </tr>
+
+                <tr>
+                    <td>INSP‑1048</td>
+                    <td>Yellow bin overflow observed</td>
+                    <td>Increase pickup frequency</td>
+                    <td><span class="tag critical">High</span></td>
+                </tr>
+
+                <tr>
+                    <td>INSP‑1045</td>
+                    <td>Segregation followed correctly</td>
+                    <td>Maintain current SOP</td>
+                    <td><span class="tag completed">Normal</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- REPORTS -->
+    <div class="section">
+        <h2>Generated Reports</h2>
+        <div class="grid">
+
+            <div class="report-box">
+                <h3>Daily Waste Report</h3>
+                <p>Day‑wise waste generation by category.</p>
+                <button>View Report</button>
+            </div>
+
+            <div class="report-box">
+                <h3>Monthly Waste Report</h3>
+                <p>Monthly summary for audits and review.</p>
+                <button>View Report</button>
+            </div>
+
+            <div class="report-box">
+                <h3>Compliance Report</h3>
+                <p>Rule adherence & violations overview.</p>
+                <button>View Report</button>
+            </div>
+
+            <div class="report-box">
+                <h3>Inspection Report</h3>
+                <p>Official inspection findings & remarks.</p>
+                <button>View Report</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Inspection Transparency • Regulatory Proof • Audit Ready
+</div>
+
+</body>
+</html>

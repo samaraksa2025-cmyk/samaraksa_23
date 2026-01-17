@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hospital Registry Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f3faf6;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.hospitals::before{ background:#66bb6a; }
+.labs::before{ background:#42a5f5; }
+.approval::before{ background:#2e7d32; }
+.suspension::before{ background:#ef5350; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.hospitals .icon{ background:#66bb6a; }
+.labs .icon{ background:#42a5f5; }
+.approval .icon{ background:#2e7d32; }
+.suspension .icon{ background:#ef5350; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* TABLE SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+td{
+    font-size:14px;
+    border-bottom:1px solid #eee;
+}
+
+/* TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.approved{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#b26a00;
+}
+
+.suspended{
+    background:#fdecea;
+    color:#c62828;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Hospital Registry Dashboard</h1>
+    <p>Central registry of hospitals, labs, clinics & regulatory status</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card hospitals">
+            <div class="icon">🏥</div>
+            <h3>Registered Hospitals</h3>
+            <p>126</p>
+            <span>Approved healthcare facilities</span>
+        </div>
+
+        <div class="card labs">
+            <div class="icon">🧪</div>
+            <h3>Labs & Clinics</h3>
+            <p>84</p>
+            <span>Diagnostic & clinical units</span>
+        </div>
+
+        <div class="card approval">
+            <div class="icon">✔</div>
+            <h3>Approval Status</h3>
+            <p>92%</p>
+            <span>Overall approval rate</span>
+        </div>
+
+        <div class="card suspension">
+            <div class="icon">⛔</div>
+            <h3>Suspension Records</h3>
+            <p style="color:#c62828;">6</p>
+            <span>Facilities under suspension</span>
+        </div>
+
+    </div>
+
+    <!-- REGISTRY TABLE -->
+    <div class="section">
+        <h2>Registered Facility Overview</h2>
+
+        <table>
+            <tr>
+                <th>Facility Name</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Approval Status</th>
+            </tr>
+
+            <tr>
+                <td>City General Hospital</td>
+                <td>Hospital</td>
+                <td>Bhubaneswar</td>
+                <td><span class="tag approved">Approved</span></td>
+            </tr>
+
+            <tr>
+                <td>Sunrise Diagnostics</td>
+                <td>Laboratory</td>
+                <td>Cuttack</td>
+                <td><span class="tag pending">Under Review</span></td>
+            </tr>
+
+            <tr>
+                <td>GreenLife Clinic</td>
+                <td>Clinic</td>
+                <td>Puri</td>
+                <td><span class="tag suspended">Suspended</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Verified Facilities • Regulatory Control • Public Safety
+</div>
+
+</body>
+</html>

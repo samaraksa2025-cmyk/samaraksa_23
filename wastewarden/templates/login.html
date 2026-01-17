@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WasteWarden | Login</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container {
+        width: 90%;
+        max-width: 1100px;
+        height: 600px;
+        background: #ffffff;
+        border-radius: 20px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    }
+
+    /* LEFT PANEL */
+    .eco-panel {
+        width: 55%;
+        padding: 60px;
+        background: linear-gradient(160deg, #2e7d32, #66bb6a);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .eco-panel h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .eco-panel p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        opacity: 0.95;
+    }
+
+    .eco-highlights {
+        list-style: none;
+        margin-top: 10px;
+    }
+
+    .eco-highlights li {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .eco-badge {
+        margin-top: 40px;
+        font-size: 14px;
+        opacity: 0.85;
+    }
+
+    /* RIGHT PANEL */
+    .login-panel {
+        width: 45%;
+        background: #f9fdf9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-card {
+        width: 85%;
+        max-width: 380px;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .login-card h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #2e7d32;
+    }
+
+    .login-card span {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #333;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 11px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #66bb6a;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #43a047, #66bb6a);
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #388e3c, #43a047);
+    }
+
+    .links {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: #2e7d32;
+        font-weight: 500;
+    }
+
+    .error {
+        color: red;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT INFO PANEL -->
+    <div class="eco-panel">
+        <h1>WasteWarden</h1>
+        <p>
+            A national digital initiative to ensure safe, transparent and eco-friendly
+            biomedical waste management across hospitals, clinics and laboratories.
+        </p>
+
+        <ul class="eco-highlights">
+            <li>🌱 Sustainable healthcare waste tracking</li>
+            <li>♻ End-to-end waste lifecycle monitoring</li>
+            <li>🏥 Hospital & lab compliance assurance</li>
+            <li>📊 Transparent environmental reporting</li>
+        </ul>
+
+        <div class="eco-badge">
+            Supporting Clean India • Healthy India • Green India
+        </div>
+    </div>
+
+    <!-- LOGIN PANEL -->
+    <div class="login-panel">
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <span>Login to manage biomedical waste responsibly</span>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="you@organization.com" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+
+                <label>Login As</label>
+                <select name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="hospital">Hospital Administrator</option>
+                    <option value="ca">Waste Collection Agency</option>
+                    <option value="tf">Treatment Facility</option>
+                    <option value="rp">Pollution Control Authority</option>
+                </select>
+
+                <button type="submit">Secure Login</button>
+
+                {% if error %}
+                    <div class="error">{{ error }}</div>
+                {% endif %}
+
+                <div class="links">
+                    <a href="#">Forgot Password?</a>
+                    <a href="#">Register Organization</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

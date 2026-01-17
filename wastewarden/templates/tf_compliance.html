@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compliance | Treatment Facility</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f4fbf7;
+    color:#2c3e50;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:26px;
+}
+
+.header p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* SECTION TITLE */
+.section-title{
+    font-size:22px;
+    color:#1e8449;
+    margin-bottom:16px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom:35px;
+}
+
+/* COMPLIANCE CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:linear-gradient(135deg,#e8f5e9,#ffffff);
+    border-left:6px solid #2ecc71;
+    padding:18px;
+    border-radius:10px;
+}
+
+.stat h3{
+    font-size:16px;
+    color:#1e8449;
+    margin-bottom:6px;
+}
+
+.stat p{
+    font-size:28px;
+    font-weight:bold;
+    color:#2c3e50;
+}
+
+.stat span{
+    font-size:13px;
+    color:#666;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:14px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#e8f5e9;
+    color:#1e8449;
+}
+
+td{
+    border-bottom:1px solid #eee;
+}
+
+/* BADGES */
+.badge{
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    color:white;
+}
+
+.compliant{ background:#2ecc71; }
+.warning{ background:#f39c12; }
+.expired{ background:#e74c3c; }
+
+/* FOOTER */
+.footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:13px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Compliance Dashboard</h1>
+    <p>Treatment Facility • Regulatory & Audit Compliance</p>
+</div>
+
+<div class="container">
+
+    <!-- TREATMENT COMPLIANCE -->
+    <h2 class="section-title">Treatment Compliance Overview</h2>
+    <div class="grid">
+
+        <div class="stat">
+            <h3>Overall Compliance</h3>
+            <p>94%</p>
+            <span>Based on last 30 days</span>
+        </div>
+
+        <div class="stat">
+            <h3>Compliant Treatments</h3>
+            <p>128</p>
+            <span>Approved disposal records</span>
+        </div>
+
+        <div class="stat">
+            <h3>Non‑Compliant Cases</h3>
+            <p>4</p>
+            <span>Require corrective action</span>
+        </div>
+
+    </div>
+
+    <!-- AUDIT RECORDS -->
+    <h2 class="section-title">Audit Records</h2>
+    <div class="card">
+        <table>
+            <tr>
+                <th>Audit Date</th>
+                <th>Auditing Authority</th>
+                <th>Observation</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>12‑Jan‑2026</td>
+                <td>State Pollution Control Board</td>
+                <td>Records verified</td>
+                <td><span class="badge compliant">Compliant</span></td>
+            </tr>
+
+            <tr>
+                <td>18‑Dec‑2025</td>
+                <td>District Health Office</td>
+                <td>Minor documentation gap</td>
+                <td><span class="badge warning">Observation</span></td>
+            </tr>
+
+            <tr>
+                <td>05‑Nov‑2025</td>
+                <td>SPCB</td>
+                <td>All norms satisfied</td>
+                <td><span class="badge compliant">Compliant</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- CERTIFICATION -->
+    <h2 class="section-title">Certification Status</h2>
+    <div class="card">
+        <table>
+            <tr>
+                <th>Certificate Type</th>
+                <th>Issued By</th>
+                <th>Valid Till</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Biomedical Waste Authorization</td>
+                <td>SPCB</td>
+                <td>31‑Dec‑2026</td>
+                <td><span class="badge compliant">Valid</span></td>
+            </tr>
+
+            <tr>
+                <td>Environmental Clearance</td>
+                <td>MoEFCC</td>
+                <td>15‑Aug‑2025</td>
+                <td><span class="badge expired">Expired</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Compliance • Accountability • Regulatory Trust
+</div>
+
+</body>
+</html>

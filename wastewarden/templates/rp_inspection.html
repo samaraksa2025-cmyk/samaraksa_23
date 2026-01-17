@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inspection Management Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#f4fbf7;
+    color:#2c3e50;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#43a047,#a5d6a7);
+    padding:24px 40px;
+    color:white;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    padding:35px 40px;
+}
+
+/* GRID */
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+}
+
+/* CARD COLORS */
+.schedule::before{ background:#2ecc71; }
+.assign::before{ background:#42a5f5; }
+.upload::before{ background:#66bb6a; }
+.score::before{ background:#ffa726; }
+
+/* ICON */
+.icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    margin-bottom:16px;
+}
+
+.schedule .icon{ background:#2ecc71; }
+.assign .icon{ background:#42a5f5; }
+.upload .icon{ background:#66bb6a; }
+.score .icon{ background:#ffa726; }
+
+/* TEXT */
+.card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:32px;
+    font-weight:bold;
+    color:#1b5e20;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#666;
+}
+
+/* SECTION */
+.section{
+    margin-top:45px;
+}
+
+.section h2{
+    color:#2e7d32;
+    margin-bottom:18px;
+}
+
+/* FORM */
+.form-box{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    max-width:600px;
+}
+
+label{
+    font-weight:600;
+    font-size:14px;
+    display:block;
+    margin-bottom:6px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    margin-bottom:16px;
+}
+
+button{
+    background:linear-gradient(135deg,#2ecc71,#66bb6a);
+    border:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#e8f5e9;
+    color:#2e7d32;
+}
+
+td{
+    border-bottom:1px solid #eee;
+}
+
+/* SCORE TAGS */
+.tag{
+    padding:6px 14px;
+    border-radius:16px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.good{ background:#e8f5e9; color:#2e7d32; }
+.average{ background:#fff3cd; color:#b26a00; }
+.poor{ background:#fdecea; color:#c62828; }
+
+/* FOOTER */
+.footer{
+    margin-top:50px;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Inspection Management</h1>
+    <p>Scheduling, inspection reporting & compliance scoring</p>
+</div>
+
+<div class="container">
+
+    <!-- KPI CARDS -->
+    <div class="dashboard-grid">
+
+        <div class="card schedule">
+            <div class="icon">📅</div>
+            <h3>Scheduled Inspections</h3>
+            <p>12</p>
+            <span>Upcoming inspections</span>
+        </div>
+
+        <div class="card assign">
+            <div class="icon">👤</div>
+            <h3>Inspectors Assigned</h3>
+            <p>7</p>
+            <span>Active field inspectors</span>
+        </div>
+
+        <div class="card upload">
+            <div class="icon">📤</div>
+            <h3>Reports Uploaded</h3>
+            <p>18</p>
+            <span>Inspection reports received</span>
+        </div>
+
+        <div class="card score">
+            <div class="icon">⭐</div>
+            <h3>Avg Inspection Score</h3>
+            <p>86%</p>
+            <span>Overall compliance rating</span>
+        </div>
+
+    </div>
+
+    <!-- SCHEDULE INSPECTION -->
+    <div class="section">
+        <h2>Schedule Inspection</h2>
+
+        <div class="form-box">
+            <label>Facility Name</label>
+            <input type="text" placeholder="Enter hospital / facility name">
+
+            <label>Inspection Date</label>
+            <input type="date">
+
+            <label>Assign Inspector</label>
+            <select>
+                <option>Select Inspector</option>
+                <option>Inspector A</option>
+                <option>Inspector B</option>
+                <option>Inspector C</option>
+            </select>
+
+            <button>Schedule Inspection</button>
+        </div>
+    </div>
+
+    <!-- INSPECTION SCORES -->
+    <div class="section">
+        <h2>Recent Inspection Scores</h2>
+
+        <table>
+            <tr>
+                <th>Facility</th>
+                <th>Inspection Date</th>
+                <th>Score</th>
+                <th>Rating</th>
+            </tr>
+
+            <tr>
+                <td>City General Hospital</td>
+                <td>15‑Jan‑2026</td>
+                <td>92%</td>
+                <td><span class="tag good">Good</span></td>
+            </tr>
+
+            <tr>
+                <td>Sunrise Diagnostics</td>
+                <td>14‑Jan‑2026</td>
+                <td>78%</td>
+                <td><span class="tag average">Average</span></td>
+            </tr>
+
+            <tr>
+                <td>Care Plus Clinic</td>
+                <td>12‑Jan‑2026</td>
+                <td>61%</td>
+                <td><span class="tag poor">Poor</span></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Inspections • Accountability • Regulatory Assurance
+</div>
+
+</body>
+</html>
